@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>测下你是守望先锋里的谁</title>
+
+		<!-- Bootstrap -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<link href="animate/animate.min.css" rel="stylesheet">
+		<link href="main.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-index">
+				<div class="onepager page">
+					<div class="flash-move">
+						<img src="img/flash.png" />
+					</div>
+					<div class="onepager-table">
+						<div class="onepager-td">
+							<button class="btn btn-start">马上进入</button>
+						</div>
+					</div>
+					<div class="zacao">杂草 | 良心制作</div>
+					<section class="outter">
+						<div hero-scene="hero-scene" class="parallax">
+							<div id="hero-scene" class="scene">
+								<div data-depth="0.15" class="layer one"></div>
+								<div data-depth="0.3" class="layer two"></div>
+								<div data-depth="0.45" class="layer three"></div>
+								<div data-depth="0.6" class="layer four"></div>
+								<div data-depth="0.1" class="layer logo"></div>
+							</div>
+							<div class="bg">
+								<div class="candy"></div>
+								<video loop="loop" class="video">
+									<source type="video/mp4" src="http://overwatch.nos.netease.com/1/assets/video/Embers.mp4">
+									<source type="video/webm" src="http://overwatch.nos.netease.com/1/assets/video/Embers_1.webm">
+								</video>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<div class="twopager page" style="display:none;">
+					<div class="pp1">
+						<div class="animated bounceInLeft p p1" style="display:none;"></div>
+						<div class="animated bounceInRight p p2" style="display:none;"></div>
+						<div class="animated bounceInLeft p p3" style="display:none;"></div>
+					</div>
+					<div class="pp2 animated bounceInDown" style="display:none;"></div>
+					<div class="pp3 animated bounceInUp" style="display:none;"></div>
+				</div>
+
+				<div class="placepager page" style="display:none;">
+					<div class="placearea-title">
+						<div class="placearea-title-td">
+						请选择英雄类型
+						</div>
+					</div>
+					<div class="placearea">
+						<div class="animated bounceInLeft area">
+							<div class="campus area-east">
+								<div class="campus-table">
+									<div class="campus-td">
+										<span>东区.重装型</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="animated bounceInRight area">
+							<div class="campus area-west">
+								<div class="campus-table">
+									<div class="campus-td">
+										<span>西区.防御型</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="animated bounceInLeft area">
+							<div class="campus area-north">
+								<div class="campus-table">
+									<div class="campus-td">
+										<span>北区.支援型</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="animated bounceInRight area">
+							<div class="campus area-huaqiao">
+								<div class="campus-table">
+									<div class="campus-td">
+										<span>华侨城区.突击型</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="threepager page animated fadeIn" id="pagetable" style="display:none;">
+					<!-- <div class="function">
+						<span class="follow">享</span>
+					</div> -->
+					<div class="follow-page" style="display:none;"></div>
+					<div data-depth="0.6" class="page-layer layer">
+						<div class="page-table">
+							<div class="page-td ">
+								<div class="cardbg" style="background-image:url(img/ow_logo.jpg)">
+									<div class="card-line"></div>
+								</div>
+								<div class="card fan" style="display:none;">
+									<div class="card-line"></div>
+									<div class="shadow">
+										<h2>黑百合</h2>
+										<hr>
+										<p>让他们先尝点甜头吧</p>
+									</div>
+								</div>
+								<div class="btn-group">
+									<button class="btn btn-change" style="display:none;">换个英雄</button>
+									<button class="btn btn-share" style="display:none;">分享屁股</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="page-bg">
+						<div class="bg"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" class="herosort" value="" />
+		<input type="hidden" class="heronum" value="" />
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="parallax/parallax.js"></script>
+		<script type="text/javascript">
+				var sceneone = document.getElementById('hero-scene');
+				var parallaxone = new Parallax(sceneone);
+				var one = {
+					init: function(){
+						this.setHeroesMove()
+					},
+					setHeroesMove: function() {
+						var a = document.getElementById("hero-scene");
+						new Parallax(a, {
+							calibrateX: !1,
+							calibrateY: !0,
+							invertX: !1,
+							invertY: !0,
+							limitX: !1,
+							limitY: 10,
+							scalarX: 2,
+							scalarY: 8,
+							frictionX: .2,
+							frictionY: .8
+						})
+					}
+				};
+
+
+				var pagetable = document.getElementById('pagetable');
+				var parallax = new Parallax(pagetable);
+				var two = {
+					init: function(){
+						this.setHeroesMove()
+					},
+					setHeroesMove: function() {
+						new Parallax(pagetable, {
+							calibrateX: !1,
+							calibrateY: !0,
+							invertX: !1,
+							invertY: !0,
+							limitX: !1,
+							limitY: 10,
+							scalarX: 2,
+							scalarY: 8,
+							frictionX: .2,
+							frictionY: .8
+						})
+					}
+				};
+
+
+			$(document).ready(function(){
+				$(".page-index").height($(window).height());
+				$(window).resize(function(){
+					$(".page-index").height($(window).height());
+				});
+				one.init();
+				two.init();
+
+				$(".btn-start").click(function(){
+					$(".onepager").attr("style","display:none;");
+					$(".twopager").removeAttr("style");
+					var p1 = setTimeout(function(){
+						$(".twopager .pp1 .p1").removeAttr("style");
+						clearTimeout(p1);
+					},0);
+					var p2 = setTimeout(function(){
+						$(".twopager .pp1 .p2").removeAttr("style");
+						clearTimeout(p2);
+					},1000);
+					var p3 = setTimeout(function(){
+						$(".twopager .pp1 .p3").removeAttr("style");
+						clearTimeout(p3);
+					},2000);
+					var pp2 = setTimeout(function(){
+						$(".twopager .pp2").removeAttr("style");
+						clearTimeout(pp2);
+					},3500);
+					var pp3 = setTimeout(function(){
+						$(".twopager .pp3").removeAttr("style");
+						clearTimeout(pp3);
+					},5000);
+					var placepager = setTimeout(function(){
+						$(".twopager").attr("style","display:none;");
+						$(".placepager").removeAttr("style");
+						clearTimeout(placepager);
+					},6800);
+				});
+
+				$(".area-east").click(function(){
+					$(".herosort").val("east");
+					$(".placepager").attr("style","display:none;");
+					$(".threepager").removeAttr("style");
+				});
+				$(".area-west").click(function(){
+					$(".herosort").val("east");
+					$(".placepager").attr("style","display:none;");
+					$(".threepager").removeAttr("style");
+				});
+				$(".area-north").click(function(){
+					$(".herosort").val("north");
+					$(".placepager").attr("style","display:none;");
+					$(".threepager").removeAttr("style");
+				});
+				$(".area-huaqiao").click(function(){
+					$(".herosort").val("huaqiao");
+					$(".placepager").attr("style","display:none;");
+					$(".threepager").removeAttr("style");
+				});
+
+				$(".cardbg").click(function(){
+					if($(".herosort").val() == "east"){
+						var n = String(parseInt(Math.random()*( 5 - 1 + 1 ) + 1));
+						$(".heronum").val(n);
+						if(n == 1){
+							$(".shadow h2").text("D.VA");
+							$(".shadow p").text("D.VA爱你哟（づ￣3￣）づ╭❤～");
+						}else if(n == 2){
+							$(".shadow h2").text("路霸");
+							$(".shadow p").text("别再叫我屠夫了！");
+						}else if(n == 3){
+							$(".shadow h2").text("查莉娅");
+							$(".shadow p").text("我健身之后是那个样子，你健身之后，也是那个样子");
+						}else if(n == 4){
+							$(".shadow h2").text("温斯顿");
+							$(".shadow p").text("禁止投喂香蕉");
+						}else if(n == 5){
+							$(".shadow h2").text("莱因哈特");
+							$(".shadow p").text("是大锤王，不是王大锤");
+						}
+					}else if($(".herosort").val() == "west"){
+						var n = String(parseInt(Math.random()*( 6 - 1 + 1 ) + 1));
+						$(".heronum").val(n);
+						if(n == 1){
+							$(".shadow h2").text("半藏");
+							$(".shadow p").text("竜が我が敵を喰らう （流噶哇噶忒ki哦库拉诶!）");
+						}else if(n == 2){
+							$(".shadow h2").text("堡垒");
+							$(".shadow p").text("“全场最佳”");
+						}else if(n == 3){
+							$(".shadow h2").text("黑百合");
+							$(".shadow p").text("谁能让那个托比昂走开点？");
+						}else if(n == 4){
+							$(".shadow h2").text("小美");
+							$(".shadow p").text("冻住！不洗澡！");
+						}else if(n == 5){
+							$(".shadow h2").text("托比昂");
+							$(".shadow p").text("“这儿有富甲包！”");
+						}else if(n == 6){
+							$(".shadow h2").text("狂鼠");
+							$(".shadow p").text("六杀保证，蓝翔车胎");
+						}
+					}else if($(".herosort").val() == "north"){
+						var n = String(parseInt(Math.random()*( 4 - 1 + 1 ) + 1));
+						$(".heronum").val(n);
+						if(n == 1){
+							$(".shadow h2").text("天使");
+							$(".shadow p").text("谁是你老婆？");
+						}else if(n == 2){
+							$(".shadow h2").text("禅雅塔");
+							$(".shadow p").text("少年，集齐七颗就可以许愿了");
+						}else if(n == 3){
+							$(".shadow h2").text("卢西奥");
+							$(".shadow p").text("如果我是DJ你会爱我吗？");
+						}else if(n == 4){
+							$(".shadow h2").text("秩序之光");
+							$(".shadow p").text("为什么我没上屁股先锋？");
+						}
+					}else if($(".herosort").val() == "huaqiao"){
+						var n = String(parseInt(Math.random()*( 6 - 1 + 1 ) + 1));
+						$(".heronum").val(n);
+						if(n == 1){
+							$(".shadow h2").text("士兵：76");
+							$(".shadow p").text("哼！整个守望先锋只有我玩的是FPS");
+						}else if(n == 2){
+							$(".shadow h2").text("死神");
+							$(".shadow p").text("呆！呆！呆！");
+						}else if(n == 3){
+							$(".shadow h2").text("法老之鹰");
+							$(".shadow p").text("“天降正......啊！！！”");
+						}else if(n == 4){
+							$(".shadow h2").text("源氏");
+							$(".shadow p").text("竜神の剣を喰らえ  （溜金喏ki恩哦库拉诶！）");
+						}else if(n == 5){
+							$(".shadow h2").text("猎空");
+							$(".shadow p").text("这个世界需要屁股！");
+						}else if(n == 6){
+							$(".shadow h2").text("麦克雷");
+							$(".shadow p").text("“五十...QB已到...”");
+						}
+					}
+
+					var m = String(parseInt(Math.random()*( 12 - 1 + 1 ) + 1));
+					$(this).attr("style","display:none;");
+					$(".card").removeAttr("style");
+					$(".card").attr("style","background-image:url(img/people/"+ $(".herosort").val() + $(".heronum").val() +".jpg);");
+					$(".page-bg").attr("style","background-image:url(img/addr/addr"+ m +".jpg);display:block;");
+					$(".btn-change").removeAttr("style");
+					$(".btn-share").removeAttr("style");
+				});
+
+				$(".btn-change").click(function(){
+					$(".threepager").attr("style","display:none;");
+					$(".placepager").removeAttr("style");
+					$(".cardbg").removeAttr("style");
+					$(".cardbg").attr("style","background-image:url(img/ow_logo.jpg);");
+					$(".card").attr("style","display:none;");
+					$(".btn-change").attr("style","display:none;");
+					$(".btn-share").attr("style","display:none;");
+				});
+
+				$(".follow").click(function(){
+					$(".follow-page").removeAttr("style");
+				});
+				$(".btn-share").click(function(){
+					$(".follow-page").removeAttr("style");
+				});
+				$(".follow-page").click(function(){
+					$(this).attr("style","display:none;");
+				});
+
+				$(".share").click(function(){
+					$(".share-page").removeAttr("style");
+				});
+				$(".share-page").click(function(){
+					$(this).attr("style","display:none;");
+				});
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,730 @@
+body{
+	font: normal normal normal 10px Arial,"microsoft yahei",sans-serif;
+}
+
+.container {
+	padding-left: 0px;
+	padding-right: 0px;
+	max-width: 640px;
+}
+.page-index {
+	width: 100%;
+	transition: height 0.5s;
+	-webkit-transition: height 0.5s;
+}
+.page-index .onepager{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.zacao{
+	position: absolute;
+	left: 0px;
+	bottom: 10px;
+	padding: 10px 0px;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
+
+section.outter {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	z-index: 0;
+}
+
+[hero-scene] {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	height: 100%;
+}
+
+
+[hero-scene] .scene {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+[hero-scene] .layer {
+	position: absolute!important;
+	top: 0;
+	left: 0;
+	width: 100%!important;
+	height: 100%!important;
+	text-align: center;
+}
+[hero-scene] .layer:before {
+	left: 0;
+	background-position: bottom left;
+}
+[hero-scene] .layer:after {
+	right: 0;
+	background-position: bottom right;
+}
+[hero-scene] .layer:after, [hero-scene] .layer:before {
+	content: '';
+	position: inherit;
+	width: inherit;
+	height: 120%;
+	z-index: inherit;
+	background-repeat: no-repeat;
+	bottom: -5%;
+}
+*, :after, :before {
+	box-sizing: inherit;
+	background-repeat: no-repeat;
+	vertical-align: inherit;
+	white-space: initial;
+	text-overflow: inherit;
+	text-shadow: inherit;
+}
+[hero-scene] .one {
+	z-index: 1;
+}
+
+[hero-scene] .one:before {
+	background-size: 18% auto;
+	background-position: bottom 66vw left 23vw;
+}
+[hero-scene] .one:before {
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/hero-left-6.png);
+	background-size: 15% auto;
+	background-position: bottom 19vw left 23vw;
+}
+
+[hero-scene] .one:after {
+	background-size: 26% auto;
+	background-position: bottom 63vw right 18vw;
+}
+[hero-scene] .one:after {
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/hero-right-6.png);
+	background-size: 23% auto;
+	background-position: bottom 17vw right 18vw;
+}
+
+[hero-scene] .two {
+	z-index: 2;
+}
+[hero-scene] .two:before {
+	background-size: 34% auto;
+}
+[hero-scene] .two:before {
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/hero-left-345.png);
+	background-size: 29% auto;
+	background-position: bottom -5.5vw left 13vw;
+}
+[hero-scene] .two:after {
+	background-size: 35% auto;
+}
+
+[hero-scene] .two:after {
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/hero-right-345.png);
+	background-size: 29% auto;
+	background-position: bottom -3vw right 17vw;
+}
+[hero-scene] .three {
+	z-index: 3;
+}
+[hero-scene] .three:before {
+	background-size: 23% auto;
+}
+[hero-scene] .three:before {
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/hero-left-2.png);
+	background-size: 19% auto;
+	background-position: bottom left 8vw;
+}
+[hero-scene] .three:after {
+	background-size: 36% auto;
+}
+[hero-scene] .three:after {
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/hero-right-2.png);
+	background-size: 30% auto;
+	background-position: bottom -5vw right 4vw;
+}
+[hero-scene] .four {
+	z-index: 4;
+}
+[hero-scene] .four:before {
+	background-size: 34% auto;
+	background-position: bottom left -9.5vw;
+}
+[hero-scene] .four:before {
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/hero-left-1.png);
+	background-size: 28% auto;
+	left: -1%;
+	background-position: bottom left -6.5vw;
+}
+[hero-scene] .four:after {
+	background-size: 32% auto;
+	background-position: bottom -5vw right -10vw;
+}
+[hero-scene] .four:after {
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/hero-right-1.png);
+	background-size: 26% auto;
+	right: -1%;
+	background-position: bottom -5vw right -5vw;
+}
+
+[hero-scene] .logo {
+	/*background-image: url(http://overwatch.nos.netease.com/1/assets/img/overwatch-logo.png);*/
+	background-image: url(img/overwatch-logo.png);
+	background-position: center top 51%;
+	background-repeat: no-repeat;
+	background-size: 35% auto;
+	position: inherit;
+	width: inherit;
+	height: inherit;
+	z-index: 1;
+}
+[hero-scene] .logo {
+	background-position: center 10%;
+	background-size: 90% auto;
+	z-index: 999;
+}
+.logo {
+	width: 190px;
+	height: 143px;
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/overwatch-logo-mobile.png);
+	background-size: contain;
+}
+[hero-scene] .bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+[hero-scene] .candy {
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/candy.jpg);
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: inherit;
+	width: inherit;
+	height: inherit;
+	z-index: 1;
+}
+[hero-scene] .video {
+	display: none;
+}
+[hero-scene] .video {
+	z-index: 2;
+	position: inherit;
+	height: 100%;
+	width: auto;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+audio, canvas, progress, video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+.onepager-table{
+	position: absolute;
+	left: 0px;
+	top:0px;
+	display: table;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	text-align: center;
+}
+.onepager-table .onepager-td{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.onepager-table .onepager-td .btn-start{
+	margin-top: 25%;
+	background-color: #ff9c00;
+	color: #fefefe;
+	border-radius: 2px;
+	font-size: 2.6rem;
+	padding: 6.5px 32px;
+	line-height: 1;
+	letter-spacing: .025em;
+	font-weight: 700;
+}
+@keyframes startbg
+{
+from {background-color: #ffb033;}
+to {background-color: #ff9c00;}
+}
+@-webkit-keyframes startbg 
+{
+from {background-color: #ffb033;}
+to {background-color: #ff9c00;}
+}
+
+.flash-move{
+	position: absolute;
+	top: 10%;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
+.flash-move img{
+	animation: turn 5s linear infinite;
+	-webkit-animation: turn 5s linear infinite;	
+}
+	@keyframes turn
+	{
+	0% {opacity:1;transform: translate(0px,0px);}
+	10%{opacity:0;transform: translate(-5px,-12px);}
+	20%{opacity:1;transform: translate(-10px,-22px);}
+	30%{opacity:0;transform: translate(-15px,-32px);}
+	40%{opacity:1;transform: translate(-20px,-42px);}
+	50%{opacity:0;transform: translate(-25px,-52px);}
+	60%{opacity:1;transform: translate(-30px,-62px);}
+	70%{opacity:0;transform: translate(-35px,-72px);}
+	80%{opacity:1;transform: translate(-40px,-82px);}
+	90%{opacity:0;transform: translate(-45px,-92px);}
+	100% {opacity:1;transform: translate(-50px,-102px);}
+	}
+
+
+
+	@-webkit-keyframes turn 
+	{
+	0% {-webkit-transform: rotate(0deg);opacity:1;}
+	10%{opacity:0;}
+	20%{opacity:1;}
+	30%{opacity:0;}
+	40%{opacity:1;}
+	50%{opacity:0;}
+	60%{opacity:1;}
+	70%{opacity:0;}
+	80%{opacity:1;}
+	90%{opacity:0;}
+	100% {-webkit-transform: rotate(360deg);opacity:1;}
+	}
+
+.twopager{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/candy.jpg);
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+.twopager .pp1{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+.twopager .pp1 .p{
+	width: 100%;
+	height: 33.3%;
+	background-position: 50%;
+	background-size: cover;
+}
+.p1{
+	background-image: url(img/p1.jpg);
+}
+.p2{
+	background-image: url(img/p2.jpg);
+}
+.p3{
+	background-image: url(img/p3.jpg);
+}
+.twopager .pp2{
+	position: absolute;
+	left:0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+	background-image: url(img/pr.jpg);
+	background-position: 50%;
+	background-size: cover;
+	z-index: 1;
+}
+.twopager .pp3{
+	position: absolute;
+	left:0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+	background-image: url(img/pr1.jpg);
+	background-position: 50%;
+	background-size: cover;
+	z-index: 2;
+}
+
+.threepager{
+	position: absolute;
+	left:0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+	background-image: url(img/result_bg.jpg);
+	background-position: 50%;
+	background-size: cover;
+	z-index: 3;
+	overflow: hidden;
+}
+.threepager .function{
+	position: absolute;
+	right: 0px;
+	top:0px;
+	z-index: 2;
+}
+.threepager .function span{
+	margin: 10px 10px 0px 0px;
+	padding: 5px;
+	width: 33px;
+	height: 33px;
+	text-align: center;
+	display: inline-block;
+	border:2px solid #fff;
+	border-radius: 50%;
+	color: #fff;
+	line-height: 20px;
+	font-size: 16px;
+	box-sizing: border-box;
+}
+.page-layer{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.page-table{
+	display: table;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.page-bg{
+	display: none; 
+	position: absolute;
+	left: 0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+	background-image: none;
+	background-size: cover;
+	z-index: 0;
+	filter: blur(2px);
+	-webkit-filter: blur(2px);
+	
+	animation: pagebg 1s ease-in-out normal;
+	-webkit-animation: pagebg 1s ease-in-out normal;	/* Safari 和 Chrome */
+}
+@keyframes pagebg
+{
+from {opacity: 0;}
+to {opacity: 1;}
+}
+@-webkit-keyframes pagebg 
+{
+from {-webkit-opacity: 0;}
+to {-webkit-opacity: 1;}
+}
+.page-bg .bg{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.page-table .page-td{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.page-table .page-td .cardbg{
+	margin: auto;
+	padding: 5px;
+	width: 85%;
+	height: 75%;
+	background-color: #333;
+	border-radius: 8px;
+	background-position: 50%;
+	background-size: cover;
+	animation: cardbg 1s ease-in-out infinite alternate;
+	-webkit-animation: cardbg 1s ease-in-out infinite alternate;	/* Safari 和 Chrome */
+}
+@keyframes cardbg
+{
+from {opacity: 0.75;}
+to {opacity: 1;}
+}
+@-webkit-keyframes cardbg 
+{
+from {-webkit-opacity: 0.75;}
+to {-webkit-opacity: 1;}
+}
+
+.page-table .page-td .card{
+	position: relative;
+	margin: auto;
+	padding: 5px;
+	width: 85%;
+	height: 75%;
+	background-color: #333;
+	border-radius: 8px;
+	background-position: 50%;
+	background-size: cover;
+}
+.fan{
+	animation: fan 1.5s ease-in-out normal;
+	-webkit-animation: fan 1.5s ease-in-out normal;	/* Safari 和 Chrome */
+}
+	@keyframes fan
+	{
+	0% {transform: rotateY(0deg);}
+	10% {transform: rotateY(-90deg);}
+	20% {transform: rotateY(0deg);}
+	100% {transform: rotateY(0deg);}
+	}
+
+	@-webkit-keyframes fan /* Safari 和 Chrome */
+	{
+	0% {-webkit-transform: rotateY(0deg);}
+	10% {-webkit-transform: rotateY(-90deg);}
+	20% {-webkit-transform: rotateY(0deg);}
+	100% {-webkit-transform: rotateY(0deg);}
+	}
+
+.card .card-line{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border:1px solid rgba(255,255,255,0.5);
+	box-sizing: border-box;
+	border-radius: 6px;
+	z-index: 0;
+}
+.page-table .page-td .card .shadow{
+	position: absolute;
+	left: 0px;
+	bottom:0px;
+	padding-bottom: 40px;
+	width: 100%;
+	background: linear-gradient(bottom , rgba(0, 0, 0, 1) , rgba(0, 0, 0, 0) 100%);
+	background: -webkit-linear-gradient(bottom , rgba(0, 0, 0, 1) , rgba(0, 0, 0, 0) 100%);
+	z-index: 1;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	color: #fff!important;
+	text-align: center;
+}
+.page-table .page-td .card .shadow hr{
+	width: 75%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: none;
+	border-top: 1px solid rgba(255,255,255,0.5);
+}
+.page-table .page-td .card .shadow h2{
+	color: #f0edf2;
+	background: -webkit-linear-gradient(#f0edf2 50%,rgba(240,237,242,0));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: 700;
+	letter-spacing: 1.6px;
+	font-style:italic;
+	text-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+}
+.page-table .page-td .card .shadow p{
+	padding: 0px 10px;
+	font-size: 14px;
+	color: #00c3ff;
+}
+
+.share-page{
+	position: absolute;
+	left: 0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	background-color: rgba(0,0,0,0.85);
+}
+.share-page .share-table{
+	display: table;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.share-page .share-table .share-td{
+	display:table-cell;
+	vertical-align: middle;
+}
+.share-page .share-table .share-td img{
+	max-width: 50%;
+	border-radius: 4px;
+}
+.share-page .share-table .share-td p{
+	color: #fff;
+	padding: 10px 0px;
+	margin-bottom: 0px;
+	letter-spacing: 1.6px;
+}
+
+.btn-change{
+	margin-top: 15px;
+	background-color: #ff9c00;
+	color: #fefefe;
+	border-radius: 2px;
+	font-size: 2.0rem;
+	padding: 6.5px 32px;
+	text-shadow: 0px 0px 4px rgba(0,0,0,0.3);
+	line-height: 1;
+	letter-spacing: .025em;
+	font-weight: 700;
+}
+.btn-share{
+	margin-top: 15px;
+	background-color: #28354f;
+	color: #fefefe;
+	border-radius: 2px;
+	font-size: 2.0rem;
+	padding: 6.5px 32px;
+	text-shadow: 0px 0px 4px rgba(0,0,0,0.3);
+	line-height: 1;
+	letter-spacing: .025em;
+	font-weight: 700;
+}
+
+.follow-page{
+	position: absolute;
+	left: 0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	background-color: rgba(0,0,0,0.85);
+	background-image: url(img/share.png);
+	background-position: 80% 0%;
+	background-repeat:no-repeat;
+	background-size: 85%;
+}
+
+.btn-find,.btn-back{
+	margin-top: 10px;
+	background-color: #ff9c00;
+	color: #fefefe;
+	text-shadow: 0px 0px 4px rgba(0,0,0,0.3);
+	border-radius: 2px;
+	font-size: 2.0rem;
+	padding: 6.5px 32px;
+	line-height: 1;
+	letter-spacing: .025em;
+	font-weight: 700;
+}
+.page-index .placepager{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-image: url(http://overwatch.nos.netease.com/1/assets/img/candy.jpg);
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.placearea-title{
+	display: table;
+	text-align: right;
+	padding-right: 15px;
+	width: 100%;
+	height: 10%;
+	font-size: 24px;
+	color: #f0edf2;
+	background: -webkit-linear-gradient(#f0edf2 50%,rgba(240,237,242,0));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: 700;
+	letter-spacing: 1.6px;
+	font-style:italic;
+	box-sizing: border-box;
+}
+.placearea-title-td{
+	display: table-cell;
+	vertical-align: middle;
+}
+.placearea{
+	width: 100%;
+	height: 90%;
+}
+.placearea .area{
+	height: 25%;
+	width: 100%;
+	padding:5px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.placearea .area .campus{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-size: cover;
+	border-radius: 6px;
+}
+.placearea .area .campus .campus-table{
+	display: table;
+	width: 100%;
+	height: 100%;
+	padding:10px;
+	background: linear-gradient(left , rgba(8,27,43,.9) 50%, rgba(60,209,255,0)  100%);
+	background: -webkit-linear-gradient(left , rgba(8,27,43,.9) 50%, rgba(60,209,255,0) 100%);
+	box-shadow: 0 0 0 2px rgba(0,195,255,.9)inset,0 0 0 2px rgba(0,195,255,.9),0 0 28px rgba(0,195,255,.9)inset;
+	border-radius: 6px;
+}
+.placearea .area .area-east{
+	background-image: url(http://overwatch.nos.netease.com/1/assets/images/media/thumbnail/roadhog-screenshot-001.jpg);
+}
+.placearea .area .area-west{
+	background-image: url(http://overwatch.nos.netease.com/1/assets/images/media/thumbnail/widowmaker-preview.jpg);
+}
+.placearea .area .area-north{
+	background-image: url(http://overwatch.nos.netease.com/1/assets/images/media/thumbnail/mercy-theatrical.jpg);
+}
+.placearea .area .area-huaqiao{
+	background-image: url(http://overwatch.nos.netease.com/1/assets/images/media/thumbnail/soldier-76-preview.jpg);
+}
+
+.placearea .area .campus .campus-table .campus-td{
+	display: table-cell;
+	vertical-align: middle;
+}
+.placearea .area .campus .campus-table .campus-td span{
+	background-repeat: no-repeat;
+	background-position: 0% 50%;
+	background-size: contain;
+	display: inline-block;
+	padding-left: 32px;
+	height: 24px;
+	font-size: 16px;
+	color: #fff;
+	letter-spacing: 1.6px;
+	font-weight: 100;
+
+	text-shadow: 0px 0px 4px #f7931e;
+}
+.placearea .area .area-east .campus-table .campus-td span{
+	background-image:url(img/east.png);
+}
+.placearea .area .area-west .campus-table .campus-td span{
+	background-image:url(img/west.png);
+}
+.placearea .area .area-north .campus-table .campus-td span{
+	background-image:url(img/north.png);
+}
+.placearea .area .area-huaqiao .campus-table .campus-td span{
+	background-image:url(img/huaqiaocheng.png);
+}

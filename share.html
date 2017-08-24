@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>测下你是守望先锋里的谁</title>
+
+		<!-- Bootstrap -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<link href="animate/animate.min.css" rel="stylesheet">
+		<link href="main.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-index">
+				<div class="threepager page animated fadeIn" id="pagetable">
+					<div class="share-page" style="display:none;">
+						<div class="share-table">
+							<div class="share-td">
+								<img src="img/qrcode.jpg">
+								<p>长按识别图中二维码关注<span class="label label-success">杂草</span></p>
+								<p>回复<span class="label label-warning">守望屁股</span>即可获得游戏入口</p>
+								<p><button class="btn btn-back">返回</button></p>
+							</div>
+						</div>
+					</div>
+					<div data-depth="0.6" class="page-layer layer">
+						<div class="page-table">
+							<div class="page-td ">
+								<div class="card" style="background-image:url(img/people/east1.jpg);">
+									<div class="card-line"></div>
+									<div class="shadow">
+										<h2>法老之鹰</h2>
+										<hr>
+										<p>让他们先尝点甜头吧</p>
+									</div>
+								</div>
+								<button class="btn btn-find">寻找我的守望先锋</button>
+							</div>
+						</div>
+					</div>
+					<div class="page-bg" style="background-image:url(img/addr/addr6.jpg);display:block;">
+						<div class="bg"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" class="herosort" value="east" />
+		<input type="hidden" class="heronum" value="1" />
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="parallax/parallax.js"></script>
+		<script type="text/javascript">
+			var pagetable = document.getElementById('pagetable');
+			var parallax = new Parallax(pagetable);
+			var two = {
+				init: function(){
+					this.setHeroesMove()
+				},
+				setHeroesMove: function() {
+					new Parallax(pagetable, {
+						calibrateX: !1,
+						calibrateY: !0,
+						invertX: !1,
+						invertY: !0,
+						limitX: !1,
+						limitY: 10,
+						scalarX: 2,
+						scalarY: 8,
+						frictionX: .2,
+						frictionY: .8
+					})
+				}
+			};
+			$(document).ready(function(){
+				$(".page-index").height($(window).height());
+				$(window).resize(function(){
+					$(".page-index").height($(window).height());
+				});
+				two.init();
+
+				$(".btn-find").click(function(){
+					$(".share-page").removeAttr("style");
+				});
+				$(".btn-back").click(function(){
+					$(".share-page").attr("style","display:none;");
+				});
+			});
+
+			var n = $(".heronum").val()
+			if($(".herosort").val() == "east"){
+				if(n == 1){
+					$(".shadow h2").text("D.VA");
+					$(".shadow p").text("D.VA爱你哟（づ￣3￣）づ╭❤～");
+				}else if(n == 2){
+					$(".shadow h2").text("路霸");
+					$(".shadow p").text("别再叫我屠夫了！");
+				}else if(n == 3){
+					$(".shadow h2").text("查莉娅");
+					$(".shadow p").text("我健身之后是那个样子，你健身之后，也是那个样子");
+				}else if(n == 4){
+					$(".shadow h2").text("温斯顿");
+					$(".shadow p").text("禁止投喂香蕉");
+				}else if(n == 5){
+					$(".shadow h2").text("莱因哈特");
+					$(".shadow p").text("是大锤王，不是王大锤");
+				}
+			}else if($(".herosort").val() == "west"){
+				if(n == 1){
+					$(".shadow h2").text("半藏");
+					$(".shadow p").text("竜が我が敵を喰らう （流噶哇噶忒ki哦库拉诶!）");
+				}else if(n == 2){
+					$(".shadow h2").text("堡垒");
+					$(".shadow p").text("“全场最佳”");
+				}else if(n == 3){
+					$(".shadow h2").text("黑百合");
+					$(".shadow p").text("谁能让那个托比昂走开点？");
+				}else if(n == 4){
+					$(".shadow h2").text("小美");
+					$(".shadow p").text("冻住！不洗澡！");
+				}else if(n == 5){
+					$(".shadow h2").text("托比昂");
+					$(".shadow p").text("“这儿有富甲包！”");
+				}else if(n == 6){
+					$(".shadow h2").text("狂鼠");
+					$(".shadow p").text("六杀保证，蓝翔车胎");
+				}
+			}else if($(".herosort").val() == "north"){
+				if(n == 1){
+					$(".shadow h2").text("天使");
+					$(".shadow p").text("谁是你老婆？");
+				}else if(n == 2){
+					$(".shadow h2").text("禅雅塔");
+					$(".shadow p").text("少年，集齐七颗就可以许愿了");
+				}else if(n == 3){
+					$(".shadow h2").text("卢西奥");
+					$(".shadow p").text("如果我是DJ你会爱我吗？");
+				}else if(n == 4){
+					$(".shadow h2").text("秩序之光");
+					$(".shadow p").text("为什么我没上屁股先锋？");
+				}
+			}else if($(".herosort").val() == "huaqiao"){
+				if(n == 1){
+					$(".shadow h2").text("士兵：76");
+					$(".shadow p").text("哼！整个守望先锋只有我玩的是FPS");
+				}else if(n == 2){
+					$(".shadow h2").text("死神");
+					$(".shadow p").text("呆！呆！呆！");
+				}else if(n == 3){
+					$(".shadow h2").text("法老之鹰");
+					$(".shadow p").text("“天降正......啊！！！”");
+				}else if(n == 4){
+					$(".shadow h2").text("源氏");
+					$(".shadow p").text("竜神の剣を喰らえ  （溜金喏ki恩哦库拉诶！）");
+				}else if(n == 5){
+					$(".shadow h2").text("猎空");
+					$(".shadow p").text("这个世界需要屁股！");
+				}else if(n == 6){
+					$(".shadow h2").text("麦克雷");
+					$(".shadow p").text("“五十...QB已到...”");
+				}
+			}
+
+			var m = String(parseInt(Math.random()*( 12 - 1 + 1 ) + 1));
+			$(".card").attr("style","background-image:url(img/people/"+ $(".herosort").val() + $(".heronum").val() +".jpg);");
+			$(".page-bg").attr("style","background-image:url(img/addr/addr"+ m +".jpg);display:block;");
+
+		</script>
+	</body>
+</html>
